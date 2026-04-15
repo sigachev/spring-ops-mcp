@@ -1,0 +1,46 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: spring-ops-mcp-server
+
+  # Spring AI MCP Server configuration
+  ai:
+    mcp:
+      server:
+        name: spring-ops-mcp
+        version: 0.1.0
+        transport: sse
+        sse-path: /mcp/sse
+
+  # Spring Ops MCP configuration
+  ops:
+    mcp:
+      enabled: true
+      register-self: false  # Standalone mode - don't register self
+      
+      # Pre-register your apps here (optional)
+      # apps:
+      #   user-service:
+      #     url: http://localhost:8081
+      #   order-service:
+      #     url: http://localhost:8082
+      #     actuator-path: /actuator
+      #   payment-service:
+      #     url: http://localhost:8083
+
+# Actuator endpoints for this server
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    io.github.mykhailo.springopsmcp: DEBUG
+    org.springframework.ai.mcp: DEBUG
