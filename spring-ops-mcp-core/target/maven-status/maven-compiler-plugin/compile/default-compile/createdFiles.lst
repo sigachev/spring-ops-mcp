@@ -1,0 +1,4 @@
+io\github\sigachev\springopsmcp\client\ActuatorClient.class
+io\github\sigachev\springopsmcp\model\RegisteredApp.class
+io\github\sigachev\springopsmcp\tools\ActuatorMcpTools.class
+io\github\sigachev\springopsmcp\model\AppRegistry.class

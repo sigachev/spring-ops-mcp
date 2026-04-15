@@ -1,35 +1,47 @@
 package io.github.sigachev.springopsmcp.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-/**
- * Represents a registered Spring Boot application.
- */
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class RegisteredApp {
 
-    /**
-     * Unique name for this application (e.g., "user-service", "order-api")
-     */
     private String name;
-
-    /**
-     * Base URL of the application (e.g., "http://localhost:8081")
-     */
     private String url;
-
-    /**
-     * Actuator base path (default: "/actuator")
-     */
     private String actuatorPath = "/actuator";
+
+    public RegisteredApp() {
+    }
 
     public RegisteredApp(String name, String url) {
         this.name = name;
         this.url = url;
         this.actuatorPath = "/actuator";
+    }
+
+    public RegisteredApp(String name, String url, String actuatorPath) {
+        this.name = name;
+        this.url = url;
+        this.actuatorPath = actuatorPath != null ? actuatorPath : "/actuator";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getActuatorPath() {
+        return actuatorPath;
+    }
+
+    public void setActuatorPath(String actuatorPath) {
+        this.actuatorPath = actuatorPath;
     }
 }

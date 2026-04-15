@@ -1,76 +1,76 @@
 package io.github.sigachev.springopsmcp.autoconfigure;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.Map;
 
-/**
- * Configuration properties for Spring Ops MCP.
- */
-@Data
 @ConfigurationProperties(prefix = "spring.ops.mcp")
 public class SpringOpsMcpProperties {
 
-    /**
-     * Enable/disable Spring Ops MCP (default: true)
-     */
     private boolean enabled = true;
-
-    /**
-     * Automatically register this application for self-monitoring (default: true)
-     */
     private boolean registerSelf = true;
-
-    /**
-     * Name to use when registering self (default: "self")
-     */
     private String selfName = "self";
-
-    /**
-     * Port of this application for self-registration (default: 8080)
-     */
     private int selfPort = 8080;
-
-    /**
-     * Pre-configured applications to register on startup.
-     * 
-     * Example:
-     * spring.ops.mcp.apps.user-service.url=http://localhost:8081
-     * spring.ops.mcp.apps.order-service.url=http://localhost:8082
-     */
     private Map<String, AppConfig> apps;
 
-    @Data
-    public static class AppConfig {
-        /**
-         * Base URL of the application
-         */
-        private String url;
+    public boolean isEnabled() {
+        return enabled;
+    }
 
-        /**
-         * Actuator base path (default: /actuator)
-         */
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public boolean isRegisterSelf() {
+        return registerSelf;
+    }
+
+    public void setRegisterSelf(boolean registerSelf) {
+        this.registerSelf = registerSelf;
+    }
+
+    public String getSelfName() {
+        return selfName;
+    }
+
+    public void setSelfName(String selfName) {
+        this.selfName = selfName;
+    }
+
+    public int getSelfPort() {
+        return selfPort;
+    }
+
+    public void setSelfPort(int selfPort) {
+        this.selfPort = selfPort;
+    }
+
+    public Map<String, AppConfig> getApps() {
+        return apps;
+    }
+
+    public void setApps(Map<String, AppConfig> apps) {
+        this.apps = apps;
+    }
+
+    public static class AppConfig {
+        private String url;
         private String actuatorPath = "/actuator";
 
-        /**
-         * Authentication type: none, basic, bearer
-         */
-        private String authType = "none";
+        public String getUrl() {
+            return url;
+        }
 
-        /**
-         * Username for basic auth
-         */
-        private String username;
+        public void setUrl(String url) {
+            this.url = url;
+        }
 
-        /**
-         * Password for basic auth
-         */
-        private String password;
+        public String getActuatorPath() {
+            return actuatorPath;
+        }
 
-        /**
-         * Bearer token for token auth
-         */
-        private String token;
+        public void setActuatorPath(String actuatorPath) {
+            this.actuatorPath = actuatorPath;
+        }
     }
 }

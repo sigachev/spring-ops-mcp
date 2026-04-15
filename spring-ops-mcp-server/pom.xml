@@ -13,7 +13,7 @@
     <artifactId>spring-ops-mcp-server</artifactId>
     <packaging>jar</packaging>
 
-    <n>Spring Ops MCP Server</n>
+    <name>Spring Ops MCP Server</name>
     <description>Standalone MCP server for monitoring multiple Spring Boot applications</description>
 
     <dependencies>
