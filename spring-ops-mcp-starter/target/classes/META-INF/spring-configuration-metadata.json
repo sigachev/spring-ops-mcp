@@ -1,0 +1,37 @@
+{
+  "groups": [
+    {
+      "name": "spring.ops.mcp",
+      "type": "io.github.sigachev.springopsmcp.autoconfigure.SpringOpsMcpProperties",
+      "sourceType": "io.github.sigachev.springopsmcp.autoconfigure.SpringOpsMcpProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.ops.mcp.apps",
+      "type": "java.util.Map<java.lang.String,io.github.sigachev.springopsmcp.autoconfigure.SpringOpsMcpProperties$AppConfig>",
+      "sourceType": "io.github.sigachev.springopsmcp.autoconfigure.SpringOpsMcpProperties"
+    },
+    {
+      "name": "spring.ops.mcp.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.github.sigachev.springopsmcp.autoconfigure.SpringOpsMcpProperties"
+    },
+    {
+      "name": "spring.ops.mcp.register-self",
+      "type": "java.lang.Boolean",
+      "sourceType": "io.github.sigachev.springopsmcp.autoconfigure.SpringOpsMcpProperties"
+    },
+    {
+      "name": "spring.ops.mcp.self-name",
+      "type": "java.lang.String",
+      "sourceType": "io.github.sigachev.springopsmcp.autoconfigure.SpringOpsMcpProperties"
+    },
+    {
+      "name": "spring.ops.mcp.self-port",
+      "type": "java.lang.Integer",
+      "sourceType": "io.github.sigachev.springopsmcp.autoconfigure.SpringOpsMcpProperties"
+    }
+  ],
+  "hints": []
+}
